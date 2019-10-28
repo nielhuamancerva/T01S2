@@ -24,7 +24,12 @@ function CourseForm(props) {
             onChange={props.onChange}
             className="form-control"
             value={props.course.professorId || ""}>
-    {props.professors.map(professors =>(<option key={professors.key} value={professors.key}>{professors.value}</option>)
+     {courseStore.getProfessors().map((professors,key)=>{
+                return (
+                <option key={key} value={professors.id}>{professors.name}</option>     
+
+                );
+              }
       
     )}
   </select>
